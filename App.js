@@ -9,22 +9,16 @@ import {
   StatusBar
 } from 'react-native';
 
-import Login from "./app/components/Login";
-import ForgetPassword from "./app/components/ForgetPassword";
-import Register from "./app/components/Register";
+import {Login} from "Login";
+import {ForgetPassword} from "ForgetPassword";
+import Register from "Register";
 
 import { StackNavigator } from "react-navigation";
 
 
 
 class Home extends Component {
-  static navigationOptions = {
-    headerStyle: {
-      backgroundColor: "#16a085",
-      elevation: null
-    },
-    header: null
-  };
+  
   render() {
     return (
       <View style={styles.container}>

@@ -11,6 +11,8 @@ import {
   AsyncStorage
 } from "react-native";
 
+import {AsyncStorage} from 'react-native';
+
 import { StackNavigator } from "react-navigation";
 
 export default class Register extends Component {
@@ -24,16 +26,11 @@ export default class Register extends Component {
     };
   }
 
-  static navigationOptions = {
-    headerStyle: {
-      backgroundColor: "#16a085",
-      elevation: null
-    }
-  };
+  
 
   async onRegisterPress() {
     const { email, password, name } = this.state;
-    console.log(email);
+    console.log(emreazail);
     console.log(name);
     console.log(password);
     await AsyncStorage.setItem("email", email);
@@ -160,4 +157,4 @@ const styles = StyleSheet.create({
   }
 });
 
-AppRegistry.registerComponent("Register", () => Register);
+export default Register;

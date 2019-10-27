@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import {
-  AppRegistry,
   KeyboardAvoidingView,
   TouchableOpacity,
   AsyncStorage,
@@ -10,6 +9,8 @@ import {
   Text, // Renders text
   View // Container component
 } from "react-native";
+import {AsyncStorage} from 'react-native';
+
 
 import { StackNavigator } from "react-navigation";
 //import Spinner from "react-native-loading-spinner-overlay";
@@ -22,13 +23,7 @@ export default class Login extends Component {
       password: ""
     };
   }
-  static navigationOptions = {
-    headerStyle: {
-      backgroundColor: "#16a085",
-      elevation: null
-    },
-    header: null
-  };
+ 
   async onLoginPress() {
     const { email, password } = this.state;
     console.log(email);
@@ -146,4 +141,4 @@ const styles = StyleSheet.create({
   }
 });
 
-AppRegistry.registerComponent("Login", () => Login);
+export default Login;

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import {
-  AppRegistry,
   StyleSheet,
   Text,
   View,
@@ -8,6 +7,8 @@ import {
   TextInput,
   TouchableOpacity
 } from "react-native";
+
+import {AsyncStorage} from 'react-native';
 
 export default class ForgetPassword extends Component {
   constructor() {
@@ -17,13 +18,7 @@ export default class ForgetPassword extends Component {
       password: "",
     };
   }
-  static navigationOptions = {
-    headerStyle: {
-      backgroundColor: "#16a085",
-      elevation: null
-    }
-  };
-
+  
   onForgetPress() {
         this.props.navigation.navigate("Login");
   }
