@@ -34,11 +34,11 @@ export default class Login extends Component {
   }
   render() {
     return (
-      <View style={styles.container}>
+      <View  style={styles.container}>
         <View behavior="padding" style={styles.container}>
           <View style={styles.logoContainer}>
             <Image style={styles.logo} source={require("./banana.png")} />
-            <Text style={styles.subtext}>Humdum</Text>
+            <Text style={styles.subtext}>Welcome</Text>
           </View>
           <KeyboardAvoidingView style={styles.keyboard}>
             <View style={styles.window}>
@@ -54,7 +54,7 @@ export default class Login extends Component {
                 onChangeText={email => this.setState({ email })}
               />
             </View>
-            <View style={styles.window}>
+            <View ScrollViewstyle={styles.window}>
               <TextInput
                 placeholder="Password"
                 placeholderTextColor="rgba(255,255,255,0.7)"
@@ -65,22 +65,23 @@ export default class Login extends Component {
                 onChangeText={password => this.setState({ password })}
               />
             </View>
+            
             <TouchableOpacity style={styles.button}>
           <Text
-            style={styles.buttonText}
+            style={styles.buttonText2}
             onPress={() => this.props.navigation.navigate("Register")}
             title="Sign up"
           >
-            Sign up
+            Create Account?
           </Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button}>
           <Text
-            style={styles.buttonText}
+            style={styles.buttonText1}
             onPress={() => this.props.navigation.navigate("ForgetPassword")}
             title="Forget Password"
           >
-            Forget Password
+            Forget Password?
           </Text>
         </TouchableOpacity>
             <TouchableOpacity
@@ -100,7 +101,7 @@ export default class Login extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#16a085"
+    backgroundColor: "#111000"
   },
   logoContainer: {
     alignItems: "center",
@@ -134,11 +135,24 @@ const styles = StyleSheet.create({
     color: "#FFF",
     fontWeight: "700"
   },
+  buttonText1: {
+    textAlign: "center",
+    color: "#FFF",
+    fontWeight: "700",
+    alignSelf:'flex-start'
+  },
+  buttonText2: {
+    textAlign: "center",
+    color: "#FFF",
+    fontWeight: "700",
+    alignSelf:'flex-end'
+  },
   button: {
-    backgroundColor: "#27ae60",
+    backgroundColor: "#010101",
     paddingVertical: 15
   },
   window: {
+    textAlign: "center",
     marginBottom: 15
   }
 });
