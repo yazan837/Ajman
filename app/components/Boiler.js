@@ -11,4 +11,4 @@ export default class Boiler extends Component {
 const styles = StyleSheet.create({});
 
 
-export default Boiler;
+

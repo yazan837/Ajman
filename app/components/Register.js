@@ -11,7 +11,7 @@ import {
   AsyncStorage
 } from "react-native";
 
-import {AsyncStorage} from 'react-native';
+
 
 import { StackNavigator } from "react-navigation";
 
@@ -169,4 +169,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Register;
+
