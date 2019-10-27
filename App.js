@@ -9,9 +9,11 @@ import {
   StatusBar
 } from 'react-native';
 
-import {Login} from "Login";
-import {ForgetPassword} from "ForgetPassword";
-import Register from "Register";
+var t = require('tcomb-form-native');
+
+import Login from "./app/components/Login";
+import ForgetPassword from "./app/components/ForgetPassword";
+import Register from "./app/components/Register";
 
 import { StackNavigator } from "react-navigation";
 

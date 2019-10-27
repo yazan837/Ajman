@@ -19,9 +19,10 @@ export default class Register extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      first_name: "",
+      last_name: "",
       email: "",
-      name: "",
-      password: "",
+      password:"",
       password_confirmation: ""
     };
   }
@@ -29,13 +30,15 @@ export default class Register extends Component {
   
 
   async onRegisterPress() {
-    const { email, password, name } = this.state;
+    const { firstname,lastname,email, password, name } = this.state;
     console.log(emreazail);
     console.log(name);
     console.log(password);
+    await AsyncStorage.setItem("first_name", first_name);
+    await AsyncStorage.setItem("last_name", last_name);
     await AsyncStorage.setItem("email", email);
-    await AsyncStorage.setItem("name", name);
     await AsyncStorage.setItem("password", password);
+    await AsyncStorage.setItem("password_confirmation", password_confirmationsword);
     this.props.navigation.navigate("Boiler");
   }
 
@@ -48,10 +51,19 @@ export default class Register extends Component {
         </View>
         <KeyboardAvoidingView>
           <TextInput
-            value={this.state.name}
-            onChangeText={name => this.setState({ name })}
+            value={this.state.first_nameme}
+            onChangeText={first_name => this.setState({ first_name })}
             style={styles.input}
-            placeholder="Name"
+            placeholder="First Name"
+            placeholderTextColor="rgba(255,255,255,0.7)"
+            returnKeyType="next"
+            onSubmitEditing={() => this.emailInput.focus()}
+          />
+          <TextInput
+            value={this.state.last_nameme}
+            onChangeText={last_name => this.setState({ last_name })}
+            style={styles.input}
+            placeholder="last Name"
             placeholderTextColor="rgba(255,255,255,0.7)"
             returnKeyType="next"
             onSubmitEditing={() => this.emailInput.focus()}
@@ -82,10 +94,10 @@ export default class Register extends Component {
             secureTextEntry
           />
           <TextInput
-            value={this.state.password}
+            value={this.state.password_confirmationsword}
             onChangeText={password_confirmation => this.setState({ password_confirmation })}
             style={styles.input}
-            placeholder="Confirm Password"
+            placeholder="Rewrite Password"
             secureTextEntry={true}
             placeholderTextColor="rgba(255,255,255,0.7)"
             returnKeyType="go"

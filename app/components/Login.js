@@ -43,7 +43,7 @@ export default class Login extends Component {
           <KeyboardAvoidingView style={styles.keyboard}>
             <View style={styles.window}>
               <TextInput
-                placeholder="Username"
+                placeholder="Email"
                 placeholderTextColor="rgba(255,255,255,0.7)"
                 returnKeyType="next"
                 onSubmitEditing={() => this.passwordInput.focus()}
@@ -65,15 +65,7 @@ export default class Login extends Component {
                 onChangeText={password => this.setState({ password })}
               />
             </View>
-            <TouchableOpacity
-              style={styles.buttonContainer}
-              onPress={this.onLoginPress.bind(this)}
-            >
-              <Text style={styles.buttonText}>LOGIN</Text>
-            </TouchableOpacity>
-          </KeyboardAvoidingView>
-        </View>
-        <TouchableOpacity style={styles.button}>
+            <TouchableOpacity style={styles.button}>
           <Text
             style={styles.buttonText}
             onPress={() => this.props.navigation.navigate("Register")}
@@ -91,6 +83,15 @@ export default class Login extends Component {
             Forget Password
           </Text>
         </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.buttonContainer}
+              onPress={this.onLoginPress.bind(this)}
+            >
+              <Text style={styles.buttonText}>LOGIN</Text>
+            </TouchableOpacity>
+          </KeyboardAvoidingView>
+        </View>
+        
       </View>
     );
   }
@@ -109,7 +110,8 @@ const styles = StyleSheet.create({
   },
   logo: {
     width: 200,
-    height: 150
+    height: 150,
+    flex:1
   },
   subtext: {
     color: "#ffffff",
