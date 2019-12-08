@@ -1,0 +1,7 @@
+download the project as zip file from github then extract it on your machin 
+go to android studio and after you run the program click on open project you have to chose android file fron the project 
+wait until the android studio finish sycronizing 
+open the project in your own IDE then open tirmenal and write"npm install"
+wait until finish downloading npm packages then write in terminal 
+"React-Native run android "
+you can see the app on genemotion or android studio elemetor divecs
